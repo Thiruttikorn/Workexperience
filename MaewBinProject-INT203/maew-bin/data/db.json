@@ -1,0 +1,109 @@
+{
+  "products": [
+    {
+      "name": "Espresso",
+      "price": 40,
+      "id": 1,
+      "src": "/src/assets/Espresso.jpeg"
+    },
+    {
+      "name": "cappuccino",
+      "price": 35,
+      "id": 2,
+      "src": "/src/assets/cappuccino.jpeg"
+    },
+    {
+      "name": "cafe latte",
+      "price": 35,
+      "id": 3,
+      "src": "/src/assets/cafe latte.jpeg"
+    },
+    {
+      "name": " mocha",
+      "price": 30,
+      "id": 4,
+      "src": "/src/assets/mocha.jpeg"
+    },
+    {
+      "name": "matcha latte",
+      "price": 50,
+      "id": 5,
+      "src": "/src/assets/matcha latte.jpeg"
+    },
+    {
+      "name": "milk",
+      "price": 25,
+      "id": 6,
+      "src": "/src/assets/milk.jpeg"
+    },
+    {
+      "name": "caramel milk",
+      "price": 45,
+      "id": 7,
+      "src": "/src/assets/caramel milk.jpeg"
+    },
+    {
+      "name": "cocoa",
+      "price": 25,
+      "id": 8,
+      "src": "/src/assets/cocoa.jpeg"
+    },
+    {
+      "name": "cannabis",
+      "price": 55,
+      "id": 9,
+      "src": "/src/assets/cannabis.jpeg"
+    },
+    {
+      "name": "Pink milk",
+      "price": 35,
+      "id": 10,
+      "src": "/src/assets/Pink milk.jpeg"
+    }
+  ],
+  "cart": [
+    {
+      "name": "Espresso",
+      "price": 40,
+      "id": 1,
+      "src": "/src/assets/Espresso.jpeg",
+      "qty": 1
+    },
+    {
+      "name": "cappuccino",
+      "price": 35,
+      "id": 2,
+      "src": "/src/assets/cappuccino.jpeg",
+      "qty": 1
+    },
+    {
+      "qty": 2,
+      "price": 70,
+      "name": "cafe latte",
+      "id": 3,
+      "src": "/src/assets/cafe latte.jpeg"
+    }
+  ],
+  "students": [
+    {
+      "fullName": "Jirapat Karawek",
+      "id": 62130500015
+    },
+    {
+      "fullName": "Thirathikorn Sriwad",
+      "id": 62130500022
+    },
+    {
+      "fullName": "Nopphasorn Techarungruengwit",
+      "id": 62130500040
+    },
+    {
+      "fullName": "Narisara Limpisirisant",
+      "id": 62130500041
+    },
+    {
+      "fullName": "warisara khruajinli",
+      "id": 62130500084
+    }
+  ]
+}
