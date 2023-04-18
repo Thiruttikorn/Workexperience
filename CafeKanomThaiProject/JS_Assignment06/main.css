@@ -1,0 +1,107 @@
+
+body{
+    background-color: #f0ebe2;
+    font-family: Mali;
+    font-size: 20px;
+    font-weight: 590;
+    padding-top: 25px;
+    padding-left: 60px;
+    padding-right: 60px;
+}
+h1{
+    padding: 20px;
+    margin: 20px;
+    border: solid 3px #613e3b;
+    color: #c73866;
+    background: #F1F4AF;
+    font-size: 55px;
+    text-align: center;
+    font-family: Mali;
+    /*text-shadow: 1.5px 3px rgb(112, 112, 109);*/
+    text-shadow: 5px 4px 3px rgb(235, 193, 7), 0 0 25px rgb(243, 249, 250), 0 0 5px rgb(247, 211, 222);
+}
+.frame{
+    margin-top: 45px;
+    margin-left: 30px;
+    margin-right: 30px;
+    display: grid;
+    grid-gap: 5px 20px;
+    /*grid-template-columns: auto auto auto; */
+    grid-template-columns: repeat(3, 1fr); 
+    /*border: dotted 2px #20d600;*/
+    background-color: #607D8B;
+}
+.item {
+    background-color: white;  
+    border-radius: 5px;
+}
+.lists{
+    border: thin 15px red; 
+    align-items: center;
+}
+.empStock{
+    color: red;
+    font-weight: bold;
+    font-size: 15px;
+}
+img {
+    /*border: 3px solid darkslateblue;*/
+    margin: 30px;
+    margin-left: 100px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: grid;
+    align-items: center;
+}
+.details {
+    margin: 30px;
+    margin-left: 80px;
+    padding: 0.5rem;
+    /*border:2px solid #d54cff;*/
+    /*background-color: #F9CDAD ;*/
+}
+.detail {
+    margin: 5px;
+    display: inline-block;
+    font-size: 22px;
+    text-align: center;
+}
+h5{
+    font-size: 22px;
+    font-family: Gluten;
+    font-weight: 100;
+}
+div {
+    margin: 5px;
+    align-items: center;
+    line-height: 20px;
+}
+p {
+    display: inline-block;
+}
+/* .card {
+    width: 200px;
+    background: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.add-order {
+    background: #20d600;
+    border: none;
+    color: white;
+    float: right;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.des-wrapper {
+    padding: 10px;
+    height: 60px;
+}
+.name {
+    color: #20d600;
+} */
