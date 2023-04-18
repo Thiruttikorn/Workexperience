@@ -1,0 +1,62 @@
+version: '3.3'
+services:
+  mysql-db:
+    image: mysql:8.0.29-debian  
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_DATABASE=testdb
+      - MYSQL_USER=faidba
+      - MYSQL_PASSWORD=123456
+      - MYSQL_ROOT_PASSWORD=123456
+    volumes:
+      - ../mysql/:/var/lib/mysql
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "7000:7000"
+    environment:
+      - VIRTUAL_HOST=$BACKEND_HOST  # 10.4.56.97
+    depends_on:
+      - mysql-db
+      - migration
+    volumes:
+      - ./eventApp:/DjangoAPI/eventApp
+
+  migration:
+    build:
+      context: .
+      dockerfile: DockerfileMigrate
+    environment:
+      - DB_HOST=mysql-db
+      - DB_USER=faidba
+      - DB_PASSWORD=123456
+    depends_on:
+      - mysql-db
+
+  frontend:
+    build: 
+      context: ../../OASIP-OR-4-front-end/ConsultationBooking
+      dockerfile: Dockerfile1
+    ports:
+      - "3000:3000"
+    environment:
+      - VIRTUAL_HOST=$FRONTEND_HOST  # ip21or4.sit.kmutt.ac.th
+    volumes:
+      - ../../OASIP-OR-4-front-end/ConsultationBooking/src:/app/src
+
+  nginx-proxy:
+    build:
+      context: ../../OASIP-OR-4-front-end/ConsultationBooking
+      dockerfile: DockerfileNginx
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ../../OASIP-OR-4-front-end/ConsultationBooking/etc/or4.conf:/etc/nginx/conf.d/or4.conf
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+
+ 

@@ -1,0 +1,39 @@
+name: Project-INT222-OR-4-Backend Actions Workflow
+
+on: 
+    push:
+        branches: [ master ]
+env:
+    BACKEND_HOST : ${{secrets.BACKEND_HOST}}
+    FRONTEND_HOST : ${{secrets.FRONTEND_HOST}}
+    USER_GITHUB : ${{secrets.USER_GITHUB}}
+    PASSWORD_GITHUB : ${{secrets.PASSWORD_GITHUB}}
+    EMAIL : ${{secrets.EMAIL}}
+    PASSWORD : ${{secrets.PASSWORD}}
+
+jobs:
+    deploy-docker-to-server:
+        runs-on: 
+          - self-hosted
+        steps:
+        - name: Export host 
+          run:  export BACKEND_HOST=$BACKEND_HOST && export FRONTEND_HOST=$FRONTEND_HOST
+
+        - name: Stop all docker-compose
+          run:  cd /home/spadmin/Project-INT221/OASIP-OR-4-back-end/DjangoAPI &&
+                docker-compose stop && docker-compose rm -f 
+                
+        - name: Git pull
+          run:  cd /home/spadmin/Project-INT221/OASIP-OR-4-back-end && git checkout . && git pull https://$USER_GITHUB:$PASSWORD_GITHUB@github.com/INT221-OR-4/OASIP-OR-4-back-end
+
+        - name: Docker-compose up mysql-db
+          run:  cd /home/spadmin/Project-INT221/OASIP-OR-4-back-end/DjangoAPI && docker-compose up -d mysql-db
+
+        - name: Build new migration
+          run:  cd /home/spadmin/Project-INT221/OASIP-OR-4-back-end/DjangoAPI && docker-compose up -d --build migration
+
+        - name: Build new backend
+          run:  cd /home/spadmin/Project-INT221/OASIP-OR-4-back-end/DjangoAPI && docker-compose up -d --build backend
+
+        - name: Docker-compose up migration/backend/frontend/nginx-proxy
+          run:  cd /home/spadmin/Project-INT221/OASIP-OR-4-back-end/DjangoAPI && docker-compose up -d  migration backend frontend nginx-proxy

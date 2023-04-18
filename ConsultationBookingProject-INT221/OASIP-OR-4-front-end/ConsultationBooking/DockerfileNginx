@@ -1,0 +1,7 @@
+FROM jwilder/nginx-proxy:alpine
+
+COPY ./etc/certificateFiles/* /etc/nginx/ssl/
+COPY ./etc/or4.conf /etc/nginx/conf.d/or4.conf
+
+COPY ./dist/ /var/www/intproj21.sit.kmutt.ac.th/public
+

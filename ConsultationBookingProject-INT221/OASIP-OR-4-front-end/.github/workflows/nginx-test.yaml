@@ -1,0 +1,24 @@
+name: Project-INT222-OR-4-frontend Actions Workflow
+
+on: 
+    push:
+        branches: [ master ]
+
+env:
+    USER_GITHUB : ${{secrets.USER_GITHUB}}
+    PASSWORD_GITHUB : ${{secrets.PASSWORD_GITHUB}}
+
+jobs:
+    deploy-docker-to-server:
+        runs-on: 
+          - self-hosted
+        steps:
+          - name: Git pull
+            run:  cd /home/spadmin/Project-INT221/OASIP-OR-4-front-end && git checkout . && git pull https://$USER_GITHUB:$PASSWORD_GITHUB@github.com/INT221-OR-4/OASIP-OR-4-front-end
+
+          - name: Npm run build
+            run:  cd /home/spadmin/Project-INT221/OASIP-OR-4-front-end/ConsultationBooking && npm run build
+
+          - name: Build nginx-proxy
+            run: cd /home/spadmin/Project-INT221/OASIP-OR-4-back-end/DjangoAPI && docker-compose up -d --build  nginx-proxy
+###

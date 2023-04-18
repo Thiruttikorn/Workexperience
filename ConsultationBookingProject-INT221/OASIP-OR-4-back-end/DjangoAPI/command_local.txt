@@ -1,0 +1,2 @@
+$env:BACKEND_HOST='api.oas.ip'
+$env:FRONTEND_HOST='web.oas.ip'
