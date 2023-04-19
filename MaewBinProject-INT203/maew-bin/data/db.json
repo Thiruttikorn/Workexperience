@@ -63,6 +63,7 @@
   ],
   "cart": [
     {
+<<<<<<< Updated upstream
       "qty": 2,
       "price": 80,
       "name": "Espresso",
@@ -70,6 +71,8 @@
       "src": "/src/assets/Espresso.jpeg"
     },
     {
+=======
+>>>>>>> Stashed changes
       "name": "cappuccino",
       "price": 35,
       "id": 2,
