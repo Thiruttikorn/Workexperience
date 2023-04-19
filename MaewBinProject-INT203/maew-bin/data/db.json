@@ -63,11 +63,11 @@
   ],
   "cart": [
     {
+      "qty": 2,
+      "price": 80,
       "name": "Espresso",
-      "price": 40,
       "id": 1,
-      "src": "/src/assets/Espresso.jpeg",
-      "qty": 1
+      "src": "/src/assets/Espresso.jpeg"
     },
     {
       "name": "cappuccino",

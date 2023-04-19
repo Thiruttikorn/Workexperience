@@ -31,7 +31,7 @@ onBeforeMount(async () => {
 })
 
 const getTotalBath = async () => {
-  const res = await fetch('http://localhost:3000/cart')
+  const res = await fetch('http://localhost:5000/cart')
   if (res.status === 200) {
     const data = await res.json()
     for (var i = 0; i < data.length; i++) {
@@ -44,7 +44,7 @@ const getTotalBath = async () => {
 }
 
 const getItem = async () => {
-  const res = await fetch('http://localhost:3000/cart')
+  const res = await fetch('http://localhost:5000/cart')
   if (res.status === 200) {
     const data = await res.json()
     for (var i = 0; i < data.length; i++) {
@@ -69,17 +69,11 @@ const getItem = async () => {
         </div>
         <div class="text-lg">{{ item.price }} ฿</div>
         <div class="actions">
-          <button
-            @click="decreaseHandler(item.id, item.price, item.qty)"
-            class="Cart mx-5"
-          >
+          <button @click="decreaseHandler(item.id, item.price, item.qty)" class="Cart mx-5">
             -
           </button>
           <span class="item-qty">{{ item.qty }}</span>
-          <button
-            @click="increaseHandler(item.id, item.price, item.qty)"
-            class="Cart mx-5"
-          >
+          <button @click="increaseHandler(item.id, item.price, item.qty)" class="Cart mx-5">
             +
           </button>
         </div>
@@ -107,6 +101,7 @@ const getItem = async () => {
   display: inline-block;
   font-size: 16px;
 }
+
 .ClearButton {
   background-color: #f44336;
   border: none;

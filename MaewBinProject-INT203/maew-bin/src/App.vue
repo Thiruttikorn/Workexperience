@@ -121,17 +121,11 @@ const deleteAll = () => {
 <template>
   <div>
     <header class="text-gray-600 body-font">
-      <div
-        class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center"
-      >
-        <a
-          class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0"
-        >
+      <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+        <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
           <span class="ml-3 text-xl">Maew Bin</span>
         </a>
-        <nav
-          class="md:ml-auto flex flex-wrap items-center text-base justify-center"
-        >
+        <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
           <router-link to="/">
             <a class="mr-5 hover:text-gray-900">Home</a>
           </router-link>
@@ -140,25 +134,16 @@ const deleteAll = () => {
           </router-link>
           <router-link to="/Cart">
             <button
-              class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base md:mt-0"
-            >
+              class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base md:mt-0">
               Cart({{ total == 0 ? "-" : total }})
             </button>
           </router-link>
         </nav>
       </div>
     </header>
-    <router-view
-      :products="products"
-      :students="students"
-      :cart="cart"
-      @deleteProducts="deleteProducts"
-      @increase="increaseQty"
-      @decrease="decreaseQty"
-      @delete-item="deleteItem"
-      @addToCart="increaseQty"
-      @deleteAll="deleteAll"
-    ></router-view>
+    <router-view :products="products" :students="students" :cart="cart" @deleteProducts="deleteProducts"
+      @increase="increaseQty" @decrease="decreaseQty" @delete-item="deleteItem" @addToCart="increaseQty"
+      @deleteAll="deleteAll"></router-view>
   </div>
 </template>
 
